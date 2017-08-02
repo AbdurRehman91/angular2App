@@ -1,10 +1,8 @@
-export class NewTask 
-{
-  id: number;
+export class Task { 
+ id: number;
   title: string = '';
   description: string = '';
-  dateCreated: string = '';
-  dateUpdated: string = '';
+  complete = false;
   constructor(values: Object = {}) {
     Object.assign(this, values);
   }

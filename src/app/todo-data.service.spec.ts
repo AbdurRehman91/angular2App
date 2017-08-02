@@ -1,15 +1,25 @@
-import { TestBed, inject } from '@angular/core/testing';
+/* tslint:disable:no-unused-variable */
 
-import { TodoDataService } from './todo-data.service';
+import {TestBed, inject} from '@angular/core/testing';
+import {TodoDataService} from './todo-data.service';
+import { ApiService } from './api.service';
+import { ApiMockService } from './api-mock.service';
 
 describe('TodoDataService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [TodoDataService]
+      providers: [
+        TodoDataService,
+        {
+          provide: ApiService,
+          useClass: ApiMockService
+        }
+      ]
     });
   });
 
-  it('should be created', inject([TodoDataService], (service: TodoDataService) => {
+  it('should ...', inject([TodoDataService], (service: TodoDataService) => {
     expect(service).toBeTruthy();
   }));
+
 });

@@ -1,35 +1,12 @@
-<div style="text-align:center">
-  <section class="todoapp">
-    <header class="header">
-      <h1>Tasks List</h1>
-      <input class="new-todo" placeholder="What tasks needed to be done?" 
-      autofocus="" (keyup.enter)="addNewTask()">
-    </header>
+<section class="todoapp">
+  <app-todo-list-header (add)="onAddTodo($event)">
+    
+  </app-todo-list-header>
+  <app-todo-list [todos]="todos" (toggleComplete)="onToggleTodoComplete($event)" (remove)="onRemoveTodo($event)">
+    
+  </app-todo-list>
 
-    <section class="main">
-      <ul class="todo-list">
-        <li *ngFor="let todo of todos" [class.completed]="todo.complete">
-          <div class="view">
-            <input class="toggle" type="checkbox" (click)="toggleTodoComplete(todo)" [checked]="todo.complete">
-            <label>{{todo.title}}</label>
-            <button class="destroy" (click)="removeTodo(todo)"></button>
-          </div>
-        </li>
-      </ul>
-    </section>
-  </section>
-</div>
-
-<!--<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" href="http://angularjs.blogspot.ca/">Angular blog</a></h2>
-  </li>
-</ul>-->
-
+  <app-todo-list-footer [todos]="todos">
+    
+  </app-todo-list-footer>
+</section>

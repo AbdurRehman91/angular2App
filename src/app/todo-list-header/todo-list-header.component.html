@@ -1,0 +1,6 @@
+<header class="header">
+  <h1>Task List</h1>
+  <input class="new-todo" placeholder="What needs to be done?" autofocus="" [(ngModel)]="newTask.title">
+  <input class="new-todo" placeholder="Task description" autofocus="" [(ngModel)]="newTask.description">
+  <button class="btn" (click)="addTodo()">Submit</button>
+</header>
